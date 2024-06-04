@@ -106,7 +106,7 @@
 }
 
 .ficha__col-de-mes {
-    grid-template-columns: 35px repeat(2, 45px);
+    grid-template-columns: 39px repeat(2, 45px);
 }
 
 .ficha__col-de-ano {
@@ -120,6 +120,7 @@
 
 .ficha__col-de-numero input {
     font-size: 20px;
+    color: var(--cor-de-risco);
 }
 
 .ficha__header__linha-de-titulos-das-colunas {
@@ -151,6 +152,10 @@
 .ficha__body__col-de-dias div:last-child {
     background-color: var(--fullblack);
     color: var(--yt);
+}
+
+.ficha__body__col-de-dias div.--highlight {
+    background-color: var(--orange);
 }
 
 .ficha__col-de-inputs input {
