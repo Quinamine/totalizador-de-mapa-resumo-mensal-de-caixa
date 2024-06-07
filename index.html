@@ -82,15 +82,18 @@
                 <div class="ficha__header__col ficha__header__col--us-distrito-e-prov --display-flex-y-center --border-t --border-b">
                     <div class="--display-flex-y-center">
                         <label for="input-us">Unidade Sanitária:</label>
-                        <input type="text" id="input-us" class="input-nao-celular --fw-700">
+                        <input type="text" id="input-us" list="datalist-us" class="input-nao-celular --fw-700">
+                        <datalist id="datalist-us"></datalist>
                     </div>
                     <div class="--display-flex-y-center">
                         <label for="input-distrito">Distrito:</label>
-                        <input type="text" id="input-distrito" class="input-nao-celular --fw-700">
+                        <input type="text" id="input-distrito" list="datalist-distritos" class="input-nao-celular --fw-700">
+                        <datalist id="datalist-distritos"></datalist>
                     </div>
                     <div class="--display-flex-y-center">
                         <label for="input-provincia">Província:</label>
-                        <input type="text" id="input-provincia" class="input-nao-celular --fw-700">
+                        <input type="text" id="input-provincia" list="datalist-provincias" class="input-nao-celular --fw-700">
+                        <datalist id="datalist-provincias"></datalist>
                     </div>
                 </div>
                 <div class="ficha__header__col ficha__header__col--mes-ano-e-numero">
@@ -1345,7 +1348,7 @@
                 </p>
                 <a href=#root class=footer__link-back-to-top>Rolar para o topo</a>
             </div>
-            <p class="footer__p footer__p--available-since">Disponível desde <time datetime="">//2024</time></p>
+            <p class="footer__p footer__p--available-since">Disponível desde <time datetime="2024-06-07">07/06/2024</time></p>
         </footer>
         <div class="desfoque"></div>
     </body>
