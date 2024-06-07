@@ -6,7 +6,7 @@
     --cor-de-risco: #dd0000;
     --cor-de-realce: #dce4f4;
     --cor-do-rodape: #f0f0f0;
-    --cor-de-risco-alfa-8: rgba(238, 0, 0, .8);
+    --fullred: #ff0000;
     --fullblack: #000000;
     --black--alpha-5: rgba(0, 0, 0, .5);
     --black--alpha-8: rgba(0, 0, 0, .8);
@@ -377,7 +377,7 @@ main {
 
 .reference-row {
     display: grid;
-    grid-template-columns: 53px 500px 68px 60px;
+    grid-template-columns: 36px 50px 46px 214px;
     align-items: center;
     min-height: 28px;
     font-size: 12px;
@@ -401,7 +401,7 @@ main {
 
 @media screen and (max-width: 810px) {
     .reference-row {
-        grid-template-columns: 1fr 60px;
+        grid-template-columns: 50px 1fr;
         grid-column-gap: 3px;
         padding-left: 0;
         padding-right: 0;
@@ -956,7 +956,7 @@ details mark {
 }
 
 .dialog-box-esvaziar-ficha__btn--confirmar:hover {
-    background-color: var(--cor-de-risco-alfa-8)
+    background-color: var(--fullred)
 }
 
 .dialog-box-esvaziar-ficha__btn--cancelar {

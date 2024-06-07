@@ -92,21 +92,11 @@ const menu = {
             },
 
             confirmar() {
-                const inputsCelulares  = document.querySelectorAll("[data-totalgeral], [readonly]");
-                const checkboxesParaInputsNaoCelulares = document.querySelectorAll("[data-for]");
+                const inputsGerais  = document.querySelectorAll(".ficha input, textarea");
        
-                for (let i = 0; i < inputsCelulares.length; i++) {
-                    inputsCelulares[i].value = "";
+                for (let i = 0; i < inputsGerais.length; i++) {
+                    inputsGerais[i].value = "";
                     localStorage.removeItem(`${keyPrefix}-input${i}`);
-                }
-
-                for (const cb of checkboxesParaInputsNaoCelulares) {                    
-                    if(cb.checked) {
-                        let idDeInputNaoCelular = cb.dataset.for
-                        let inputNaoCelular = document.getElementById(`${idDeInputNaoCelular}`);
-                        inputNaoCelular.value = "";
-                        localStorage.removeItem(`${keyPrefix}-${inputNaoCelular.id}`);
-                    }
                 }
                 menu.esvaziarFicha().fecharDialogBox();
             }
