@@ -45,9 +45,7 @@ function destacarCelulasComConteudoOmisso() {
             }
             
         } else {
-            if(c.value.length === 7) {
-                c.classList.add("--font-small");
-            } else if(c.value.length > 7) {
+            if(c.value.length > 6) {
                 c.classList.add("celula-saturada");
                 celulasSaturadas++;
             }

@@ -24,7 +24,6 @@
     --blue--light: #2573b5;
     --purple: rgb(116, 116, 235);
     --orange: #faa032;
-    --greenyellow:greenyellow;
     --yellow: yellow;
     --greenyellow: greenyellow;
     --brown: brown;
@@ -377,7 +376,7 @@ main {
 
 .reference-row {
     display: grid;
-    grid-template-columns: 36px 50px 46px 214px;
+    grid-template-columns: 25px 50px 46px 214px;
     align-items: center;
     min-height: 28px;
     font-size: 12px;
@@ -401,21 +400,17 @@ main {
 
 @media screen and (max-width: 810px) {
     .reference-row {
-        grid-template-columns: 50px 1fr;
+        grid-template-columns: 25px 50px 1fr;
         grid-column-gap: 3px;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .reference-row__output--indicador {
         padding-left: 6px;
+        padding-right: 0;
     }
 
     .reference-row__output {
         margin: 0px;
     }
     
-    .reference-row__label {
+    .reference-row__label--coluna {
         display: none;
     }
 }
