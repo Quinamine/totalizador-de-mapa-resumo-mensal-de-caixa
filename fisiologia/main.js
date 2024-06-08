@@ -31,7 +31,6 @@ const totalizador = {
 
         } 
 
-
         if(inputTarget.parentElement.dataset.coltitle === "receitas-aviadas") {
             let classNameDosOperandos = inputTarget.dataset.totaleixoy;
             inputTarget.classList.add(`${classNameDosOperandos}`);
@@ -39,26 +38,27 @@ const totalizador = {
             const operandos = document.querySelectorAll(`.${classNameDosOperandos}`);
             const celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totaleixoyoutput}`);
             celulaDeSaida.value = this.somar(operandos);
-        } else {
-            if(inputTarget.dataset.totaleixoy) {
-                const operandos = document.querySelectorAll(`.${inputTarget.dataset.totaleixoy}`)
+            return false;
+        }
+        
+        if(inputTarget.dataset.totaleixoy) {
+            const operandos = document.querySelectorAll(`.${inputTarget.dataset.totaleixoy}`)
 
 
-                let contraAlgarismos, contraValor = "";
-                let total = 0;
-                for (let i=0; i < operandos.length; i+=4) {
-                    contraAlgarismos = document.querySelectorAll(`.${operandos[i].dataset.quartetocelular}`);
-                    for (const algarismo of contraAlgarismos) {
-                        contraValor += algarismo.value;
-                    }
-                    total+= Number(contraValor)
-                    contraValor = ""
+            let contraAlgarismos, contraValor = "";
+            let total = 0;
+            for (let i=0; i < operandos.length; i+=4) {
+                contraAlgarismos = document.querySelectorAll(`.${operandos[i].dataset.quartetocelular}`);
+                for (const algarismo of contraAlgarismos) {
+                    contraValor += algarismo.value;
                 }
-
-                total = total.toString();
-                const celulasDeSaida = document.querySelectorAll(`.${inputTarget.dataset.totaleixoyoutput}`);
-                this.preecherTotalAoQuartetoCelularDeSaida(total, celulasDeSaida);
+                total+= Number(contraValor)
+                contraValor = ""
             }
+
+            total = total.toString();
+            const celulasDeSaida = document.querySelectorAll(`.${inputTarget.dataset.totaleixoyoutput}`);
+            this.preecherTotalAoQuartetoCelularDeSaida(total, celulasDeSaida);
         }
 
         if(inputTarget.dataset.totalgeral) {

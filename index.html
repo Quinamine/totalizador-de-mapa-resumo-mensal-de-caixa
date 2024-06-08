@@ -99,19 +99,26 @@
                 <div class="ficha__header__col ficha__header__col--mes-ano-e-numero">
                     <div class="ficha__col-de-mes">
                         <label for="input-mes">Mês</label>
-                        <input type="number" id="input-mes" class="--fw-700 --border">
-                        <input type="number" class="--fw-700 --border-t --border-r --border-b">
+                        <input type="number" id="input-mes" list="datalist-mes-1o-algarismo" class="--fw-700 --border">
+                        <input type="number" list="datalist-mes-2o-algarismo" class="--fw-700 --border-t --border-r --border-b">
+                        <datalist id="datalist-mes-1o-algarismo" class="datalist-mes" ></datalist>
+                        <datalist id="datalist-mes-2o-algarismo" class="datalist-mes"></datalist>
                     </div>
                     <div class="ficha__col-de-ano">
                         <label for="input-mes">Ano</label>
-                        <input type="number" id="input-ano" class="--fw-700 --border">
-                        <input type="number" class="--fw-700 --border-t --border-b">
-                        <input type="number" class="--fw-700 --border-l --border-t --border-b">
-                        <input type="number" class="--fw-700 --border">
+                        <input type="number" id="input-ano" list="datalist-ano-1o-algarismo" class="--fw-700 --border">
+                        <input type="number" list="datalist-ano-2o-algarismo" class="--fw-700 --border-t --border-b">
+                        <input type="number" list="datalist-ano-3o-algarismo" class="--fw-700 --border-l --border-t --border-b">
+                        <input type="number" list="datalist-ano-4o-algarismo" class="--fw-700 --border">
+                        <datalist id="datalist-ano-1o-algarismo" class="datalist-ano"></datalist>
+                        <datalist id="datalist-ano-2o-algarismo" class="datalist-ano"></datalist>
+                        <datalist id="datalist-ano-3o-algarismo" class="datalist-ano"></datalist>
+                        <datalist id="datalist-ano-4o-algarismo" class="datalist-ano"></datalist>
                     </div>
                     <div class="ficha__col-de-numero">
                         <label for="input-numero">N<sup>o</sup></label>
-                        <input type="number" id="input-numero" class="--fw-700 --border" value="0059500"/>
+                        <input type="number" id="input-numero" list="datalist-numero" class="--fw-700 --border"/>
+                        <datalist id="datalist-numero"><option value="0059500"></option></datalist>
                     </div>
                 </div>
 
@@ -1335,7 +1342,7 @@
                 </p>
                 <a href=#root class=footer__link-back-to-top>Rolar para o topo</a>
             </div>
-            <p class="footer__p footer__p--available-since">Disponível desde <time datetime="2024-06-07">07/06/2024</time></p>
+            <p class="footer__p footer__p--available-since">Disponível desde <time datetime="2024-06-07">07/06/2024</time>.</p>
         </footer>
         <div class="desfoque"></div>
     </body>
