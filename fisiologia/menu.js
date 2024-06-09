@@ -225,9 +225,9 @@ function eventos() {
 
     // PARTILHAR 
     const data = {
-        title: "Totalizador de Resumo Mensal de SAAJ",
-        text: "O Totalizador de Resumo Mensal de SAAJ é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do resumo mensal de SAAJ (Serviço Amigo do Adolescente e Jovem), por meio do cálculo automático dos totais com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de SAAJ actualmente vigente no Serviço Nacional de Saúde em Moçambique.",
-        url: "https://quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html"
+        title: "Totalizador de Mapa Resumo Mensal de Caixa",
+        text: "O Totalizador de Mapa Resumo Mensal de Caixa é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do mapa resumo mensal de caixa, por meio do cálculo automático dos totais com base nos valores preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de mapa resumo mensal de caixa actualmente vigente no Serviço Nacional de Saúde em Moçambique.",
+        url: "https://quinamine.github.io/totalizador-de-mapa-resumo-mensal-de-caixa/index.html"
     }
 
     const btnPartilhar = document.querySelector(".header__menu__btn--partilhar");

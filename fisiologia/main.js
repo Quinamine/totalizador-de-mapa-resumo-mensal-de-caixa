@@ -7,14 +7,14 @@ function backup() {
         
         inputsGerais[i].addEventListener("input", () => {
             localStorage.setItem(`${keyPrefix}-input${i}`, inputsGerais[i].value);
-        });
+        });  
         inputsGerais[i].value = localStorage.getItem(`${keyPrefix}-input${i}`);
     }
 }
 
 const totalizador = {
     filtrarEtotalizarCelulas(inputTarget) {
-        if(inputTarget.dataset.contraquarteto) {
+        if(inputTarget.dataset.totaleixoxoutput) {
             const algarismosDoQuartetoCelular = document.querySelectorAll(`.${inputTarget.dataset.quartetocelular}`);
             const contraAlgarismos = document.querySelectorAll(`.${inputTarget.dataset.contraquarteto}`);
 
@@ -110,10 +110,12 @@ function escutarEventos() {
         inputCelular.addEventListener("input", () => totalizador.filtrarEtotalizarCelulas(inputCelular));
         inputCelular.classList.add(`${inputCelular.dataset.totaleixoy}`);
         inputCelular.classList.add(`${inputCelular.dataset.totalgeral}`);
-        if(inputCelular.dataset.quartetocelular) {
-            inputCelular.classList.add(`${inputCelular.dataset.quartetocelular}`);
-            //inputCelular.value !== "" && totalizador.filtrarEtotalizarCelulas(inputCelular);
-        }
+        inputCelular.classList.add(`${inputCelular.dataset.quartetocelular}`);
+        setTimeout(() => {
+            inputCelular.value !== "" && totalizador.filtrarEtotalizarCelulas(inputCelular);
+        }, 0)
+ 
+        
     });
 }
 
