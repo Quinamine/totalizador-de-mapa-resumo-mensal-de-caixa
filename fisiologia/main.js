@@ -7,33 +7,82 @@ function backup() {
         
         inputsGerais[i].addEventListener("input", () => {
             localStorage.setItem(`${keyPrefix}-input${i}`, inputsGerais[i].value);
-        });
+        });  
         inputsGerais[i].value = localStorage.getItem(`${keyPrefix}-input${i}`);
     }
 }
 
 const totalizador = {
     filtrarEtotalizarCelulas(inputTarget) {
-        if(inputTarget.dataset.cobradoousubsidiado) {
-            const algarismosDeCobradoOuSubsidiado = document.querySelectorAll(`.${inputTarget.dataset.cobradoousubsidiado}`);
-            const contraAlgarismos = document.querySelectorAll(`.${inputTarget.dataset.cobradoousubscorrespondente}`);
+        if(inputTarget.dataset.totaleixoxoutput) {
+            const algarismosDoQuartetoCelular = document.querySelectorAll(`.${inputTarget.dataset.quartetocelular}`);
+            const contraAlgarismos = document.querySelectorAll(`.${inputTarget.dataset.contraquarteto}`);
 
-            let valCobradoOuSubsidiado = "", contraValor = "";
-            for (let i=0; i < algarismosDeCobradoOuSubsidiado.length; i++) {
-                valCobradoOuSubsidiado += algarismosDeCobradoOuSubsidiado[i].value;
+            let valorDoQuartetoCelular = "", contraValor = "";
+            for (let i=0; i < algarismosDoQuartetoCelular.length; i++) {
+                valorDoQuartetoCelular += algarismosDoQuartetoCelular[i].value;
                 contraValor += contraAlgarismos[i].value;
 
             }
-            let total = Number(valCobradoOuSubsidiado) + Number(contraValor);
+            let total = Number(valorDoQuartetoCelular) + Number(contraValor);
             total = total.toString();
             const celulasDeSaida = document.querySelectorAll(`.${inputTarget.dataset.totaleixoxoutput}`);
-            
-            /*celulasDeSaida[3].value = total[total.length - 1]
-            celulasDeSaida[2].value = total[total.length - 2]
-            celulasDeSaida[1].value = total[total.length - 3]
-            celulasDeSaida[0].value = total[total.length - 4]*/
+            this.preecherTotalAoQuartetoCelularDeSaida(total, celulasDeSaida);
 
-            for (const celula of celulasDeSaida) celula.value = "";
+        } 
+
+        if(inputTarget.parentElement.dataset.coltitle === "receitas-aviadas") {
+            let classNameDosOperandos = inputTarget.dataset.totaleixoy;
+            inputTarget.classList.add(`${classNameDosOperandos}`);
+
+            const operandos = document.querySelectorAll(`.${classNameDosOperandos}`);
+            const celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totaleixoyoutput}`);
+            celulaDeSaida.value = this.somar(operandos);
+            return false;
+        }
+        
+        if(inputTarget.dataset.totaleixoy) {
+            const operandos = document.querySelectorAll(`.${inputTarget.dataset.totaleixoy}`)
+
+
+            let contraAlgarismos, contraValor = "";
+            let total = 0;
+            for (let i=0; i < operandos.length; i+=4) {
+                contraAlgarismos = document.querySelectorAll(`.${operandos[i].dataset.quartetocelular}`);
+                for (const algarismo of contraAlgarismos) {
+                    contraValor += algarismo.value;
+                }
+                total+= Number(contraValor)
+                contraValor = ""
+            }
+
+            total = total.toString();
+            const celulasDeSaida = document.querySelectorAll(`.${inputTarget.dataset.totaleixoyoutput}`);
+            this.preecherTotalAoQuartetoCelularDeSaida(total, celulasDeSaida);
+        }
+
+        if(inputTarget.dataset.totalgeral) {
+            const operandos = document.querySelectorAll(`.${inputTarget.dataset.totalgeral}`)
+
+            let contraAlgarismos, contraValor = "";
+            let total = 0;
+            for (let i=0; i < operandos.length; i+=4) {
+                contraAlgarismos = document.querySelectorAll(`.${operandos[i].dataset.quartetocelular}`);
+                for (const algarismo of contraAlgarismos) {
+                    contraValor += algarismo.value;
+                }
+                total+= Number(contraValor)
+                contraValor = ""
+            }
+
+            total = total.toString();
+            const celulasDeSaida = document.querySelectorAll(`.${inputTarget.dataset.totalgeraloutput}`);
+            this.preecherTotalAoQuartetoCelularDeSaida(total, celulasDeSaida);
+        }
+    },
+
+    preecherTotalAoQuartetoCelularDeSaida(total, celulasDeSaida) {
+        for (const celula of celulasDeSaida) celula.value = "";
 
             let outputCellIndex = 3;
             for (let i=1; i <= total.length; i++) {
@@ -44,35 +93,6 @@ const totalizador = {
                     celulasDeSaida[0].value = Number(milhares).toLocaleString();
                 }
             }
-
-        } 
-
-
-        if(inputTarget.parentElement.dataset.coltitle === "receitas-aviadas") {
-            let classNameDosOperandos = inputTarget.dataset.totaleixoy;
-            inputTarget.classList.add(`${classNameDosOperandos}`);
-
-            const operandos = document.querySelectorAll(`.${classNameDosOperandos}`);
-            const celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totaleixoyoutput}`);
-            celulaDeSaida.value = this.somar(operandos);
-        } else {
-            if(inputTarget.dataset.totaleixoy) {
-                const algarismos = document.querySelectorAll(`.${inputTarget.dataset.cobradoousubsidiado}`);
-                const operandos = document.querySelectorAll(`.${inputTarget.dataset.totaleixoy}`)
-
-                let valor = "";
-                for (let i=0; i < algarismos.length; i++) {
-                    valor += algarismos[i].value;
-                }
-
-                let contraAlgarismos, contraValor = "";
-                for (let i=0; i < operandos.length; i++) {
-                    contraAlgarismos = document.querySelectorAll(`.${operandos[i].dataset.cobradoousubsidiado}`);
-                    
-                }
-                    
-            }       
-        }
     },
     
     somar(celulasPorTotalizar) {
@@ -89,10 +109,13 @@ function escutarEventos() {
     inputsCelulares.forEach( inputCelular => {
         inputCelular.addEventListener("input", () => totalizador.filtrarEtotalizarCelulas(inputCelular));
         inputCelular.classList.add(`${inputCelular.dataset.totaleixoy}`);
-        if(inputCelular.dataset.cobradoousubsidiado) {
-            inputCelular.classList.add(`${inputCelular.dataset.cobradoousubsidiado}`);
-            //inputCelular.value !== "" && totalizador.filtrarEtotalizarCelulas(inputCelular);
-        }
+        inputCelular.classList.add(`${inputCelular.dataset.totalgeral}`);
+        inputCelular.classList.add(`${inputCelular.dataset.quartetocelular}`);
+        setTimeout(() => {
+            inputCelular.value !== "" && totalizador.filtrarEtotalizarCelulas(inputCelular);
+        }, 0)
+ 
+        
     });
 }
 

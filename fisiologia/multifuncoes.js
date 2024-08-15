@@ -45,9 +45,7 @@ function destacarCelulasComConteudoOmisso() {
             }
             
         } else {
-            if(c.value.length === 7) {
-                c.classList.add("--font-small");
-            } else if(c.value.length > 7) {
+            if(c.value.length > 6) {
                 c.classList.add("celula-saturada");
                 celulasSaturadas++;
             }
@@ -75,10 +73,35 @@ function actualizarAnoDeCopyright() {
     const tempo = new Date();
     let anoActual = tempo.getFullYear();
 
-    if(anoActual < 2022) anoActual = 2022;
+    if(anoActual < 2024) anoActual = 2024;
 
     const currentYearOutput = document.querySelector(".footer__current-year");
     currentYearOutput.textContent = anoActual;
+}
+
+function sugerirMesEAnoActual() {
+    const tempo = new Date();
+
+
+    let mesActual = tempo.getMonth();
+    mesActual++;
+    mesActual = mesActual.toString()
+    if(mesActual.length === 1) {
+        mesActual = 0 + mesActual;
+    }
+
+    const casasDecimaisDoMes = document.querySelectorAll(".datalist-mes"); 
+    for(let i=0; i < mesActual.length; i++) {
+        casasDecimaisDoMes[i].innerHTML = `<option value=${mesActual[i]}></option>`
+    }
+
+    const casasDecimaisDoAno = document.querySelectorAll(".datalist-ano");
+    let anoActual = tempo.getFullYear();
+    anoActual = anoActual.toString();
+
+    for(let i=0; i < anoActual.length; i++) {
+        casasDecimaisDoAno[i].innerHTML = `<option value=${anoActual[i]}></option>`
+    }
 }
 
 function formatarNumeros() {
@@ -112,6 +135,7 @@ window.addEventListener("load", () => {
 
     // Actualizar o ano 
     actualizarAnoDeCopyright();
+    sugerirMesEAnoActual();
     formatarNumeros();
 
     // Animar Janela Aberta
