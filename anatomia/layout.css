@@ -565,8 +565,7 @@ main {
     position: relative;
 }
 
-.details-preenchimento__p--destaque {
-    padding: 10px 10px 10px 45px;
+.artigo__p--destaque.--sem-sombra {
     box-shadow: none;
 }
 
@@ -582,7 +581,7 @@ main {
     left: 15px;
 }
 
-.details-preenchimento__p--destaque::before {
+.--sem-sombra::before {
     font-size: 10px;
     padding: 1px 8px;
 }
