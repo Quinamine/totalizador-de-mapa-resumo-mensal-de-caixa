@@ -3,7 +3,7 @@
 const referencia = {
     retornarLinha(inputTarget) {
         const colLinhas = document.querySelectorAll(".ficha__body__col-de-dias span");
-        const linhaOuput = document.querySelector(".reference-row__output--linha");
+        const linhaOuput = document.querySelector(".reference__output--linha");
         const inputTargetAndSiblings = inputTarget.parentElement.children;
         let inputTargetIndex = 0;
 
@@ -18,7 +18,7 @@ const referencia = {
     },
 
     retornarColuna(inputTarget) {
-        const indicadorOutput = document.querySelector(".reference-row__output--coluna");
+        const indicadorOutput = document.querySelector(".reference__output--coluna");
 
         let classeDoIndicadorColunar = inputTarget.parentElement.dataset.coltitle;
         let indicadorColunar = document.querySelector(`.${classeDoIndicadorColunar}`).innerText;
@@ -27,7 +27,7 @@ const referencia = {
     },
 
     retornarVazio() {
-        const outputs = document.querySelectorAll(".reference-row__output");
+        const outputs = document.querySelectorAll(".reference__output");
         for (const o of outputs) o.value = "";
     }
 }

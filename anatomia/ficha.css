@@ -3,12 +3,10 @@
     margin: 30px auto;
     font-weight: 700;
 }
-
 .ficha__header {
     display: grid;
     grid-template-columns: 25px 1fr;
 }
-
 @media screen {
     .ficha__header {
         position: sticky;
@@ -17,12 +15,10 @@
         z-index: 99;
     }
 }
-
 .ficha__header__col--cmam {
     grid-row: 1/3;
     background-color: var(--fullblack);
 }
-
 .ficha__header__col--cmam span {
     font-size: 10.5px;
     color: var(--yt);
@@ -31,35 +27,29 @@
     text-wrap: nowrap;
     letter-spacing: 0.5px;
 }
-
 .ficha__header__col--emblema-e-titulo {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 12px 0px;
 }
-
 .ficha__header__col-de-emblema {
     display: grid;
     grid-template-columns: 74px 1fr;
 }
-
 .ficha__emblema {
     width: 55px;
     height: 60px;
     margin: auto;
 }
-
 .ficha__box-descricao-de-emblema {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 .ficha__box-descricao-de-emblema span {
     text-transform: uppercase;
     line-height: 1.5;
 }
-
 .ficha__titulo {
     font-size: 22px;
     text-transform: uppercase;
@@ -67,25 +57,20 @@
     text-align: center;
     margin-top: 6px;
 }
-
 .ficha__header__col--us-distrito-e-prov {
     min-height: 25px;
 }
-
 .ficha__header__col--us-distrito-e-prov label {
     margin: 0 2px 0 6px;
 }
-
 .ficha__header__col--us-distrito-e-prov > div {
     height: 85%;
 }
-
 .ficha__header__col--us-distrito-e-prov input {
     display: inline-block;
     width: 203px;
     height: 100%;
 }
-
 .ficha__header__col--mes-ano-e-numero {
     grid-column: 1/3;
     display: grid;
@@ -94,39 +79,31 @@
     padding-top: 15px;
     padding-left: 31px;
 }
-
 .ficha__header__col--mes-ano-e-numero input {
     height: 100%;
 }
-
 .ficha__header__col--mes-ano-e-numero input::-webkit-calendar-picker-indicator {
     display: none !important;
 }
-
 .ficha__header__col--mes-ano-e-numero > div {
     display: grid;
     grid-template-rows: 20px;
     align-items: center;
 }
-
 .ficha__col-de-mes {
     grid-template-columns: 39px repeat(2, 45px);
 }
-
 .ficha__col-de-ano {
     grid-template-columns: 35px repeat(4, 45px);
    
 }
-
 .ficha__col-de-numero {
     grid-template-columns: 20px 145px;
 }
-
 .ficha__col-de-numero input {
     font-size: 20px;
     color: var(--cor-de-risco);
 }
-
 .ficha__header__linha-de-titulos-das-colunas {
     display: grid;
     grid-template-columns: 45px repeat(3, calc(45px * 4)) 130px calc(45px * 4);
@@ -134,35 +111,29 @@
     grid-template-rows: 35px;
     margin-top: 15px;
 }
-
 .ficha__header__linha-de-titulos-das-colunas span {
     font-weight: 700;
     text-align: center;
     line-height: 1.2;
 }
-
 .ficha__body {
     display: grid;
     grid-template-columns: repeat(13, 45px) 130px repeat(4, 45px);
     padding-left: 25px;
     overflow: hidden;
 }
-
 .ficha__body__col-de-dias,
 .ficha__col-de-inputs {
     display: grid;
     grid-template-rows: repeat(32, 25px);
 }
-
 .ficha__body__col-de-dias div:last-child {
     background-color: var(--fullblack);
     color: var(--yt);
 }
-
 .ficha__body__col-de-dias div.--highlight {
     background-color: var(--orange);
 }
-
 .ficha__col-de-inputs input {
     border-bottom: var(--thin-border-style);
     display: block;
@@ -170,14 +141,26 @@
     text-align: center;
     font-size: 13px;
 }
-
+[data-totaleixoy]:focus,
+.input-nao-celular:focus {
+    border-bottom: 2px solid var(--blue);
+    background-color: var(--greenyellow);
+}
+@media screen {
+    .input--realcar-totais {
+        background-color: var(--gray--c);
+    }
+}
+.input--bg-color-danger {
+    background-color: var(--cor-de-risco);
+    color: var(--yt)
+}
 .ficha__rodape {
     display: grid;
     grid-template-rows: repeat(3, 25px) 48px 30px;
     padding-left: 25px;
     padding-bottom: 12px;
 }
-
 .ficha__rodape input {
     min-width: 280px;
     text-align: left;
@@ -185,20 +168,16 @@
     height: 88%;
     margin-left: 2px;
 }
-
 .ficha__rodape__linha {
     padding-left: 6px;
 }
-
 .ficha__rodape__linha--padding-l-maior {
     padding-left: 40px;
 }
-
 .ficha__rodape__linha--grid {
     display: grid;
     grid-template-columns: 502px 1fr;
 }
-
 .ficha__rodape__linha--align-self-center {
     align-self: center;
 }
