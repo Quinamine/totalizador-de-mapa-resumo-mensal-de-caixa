@@ -135,7 +135,7 @@
     background-color: var(--orange);
 }
 .ficha__col-de-inputs input {
-    border-bottom: var(--thin-border-style);
+    border-bottom: 1px solid var(--cor-de-borda);
     display: block;
     width: 100%;
     text-align: center;
@@ -145,10 +145,11 @@
 .input-nao-celular:focus {
     border-bottom: 2px solid var(--blue);
     background-color: var(--greenyellow);
+    color: var(--cor-de-texto);
 }
 @media screen {
     .input--realcar-totais {
-        background-color: var(--gray--c);
+        background-color: var(--cor-de-realce-de-totais);
     }
 }
 .input--bg-color-danger {
