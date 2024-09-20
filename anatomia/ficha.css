@@ -14,6 +14,9 @@
         background-color: var(--yt);
         z-index: 99;
     }
+    .body-com-topo-propaganda .ficha__header {
+        top: -122px;
+    }
 }
 .ficha__header__col--cmam {
     grid-row: 1/3;
