@@ -91,8 +91,6 @@ const menu = {
         }
     },
     imprimirFicha() {
-        const comentarios = document.querySelector(".main__campo-de-comentarios");
-        comentarios.value === "" ? comentarios.parentElement.classList.add("--no-print") : comentarios.parentElement.classList.remove("--no-print");
         window.print()
     },
     abrirArtigo(artigo) {
