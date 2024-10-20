@@ -16,14 +16,14 @@ O **Totalizador de Mapa Resumo Mensal de Caixa** é um serviço online gratuito 
 
 ## O que eu preciso dispor para, e como utilizar o totalizador?
 
-* Um celular ou computador com acesso à internet.
+* Um celular ou computador com acesso à internet;
 
 * Para cada variável (Valor cobrado e Subsidiado), preencher os valores correspondentes em função dos dias do mês em reporte e consequentemente os respectivos totais são, em tempo real, correcta e automaticamente calculados.
 
 
 ## Qual é o destino dos dados que eu insiro?
 
-São guardados no seu celular ou computador, por meio de um recurso chamado [Web Storage](https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API) e você tem total controle sobre os dados, podendo mantê-los ou apagá-los por meio da opção "Esvaziar ficha" no menu do totalizador ou excluindo os dados de navegação (histórico) do navegador.
+São guardados no seu celular ou computador, por meio de um recurso chamado [Web Storage](https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API) e você tem total controle sobre os dados, podendo mantê-los ou apagá-los por meio da opção "Esvaziar ficha" no menu do totalizador ou excluindo os dados de navegação do seu navegador.
 
 
 ## Vantagens do totalizador
