@@ -36,6 +36,6 @@ São guardados no seu celular ou computador, por meio de um recurso chamado [Web
 
 * Flexibiliza a elaboração do resumo;
 
-* Pode ser impresso, inclusíve como uma simples ficha de mapa resumo mensal de caixa;
+* Pode ser impresso, inclusive como uma simples ficha de mapa resumo mensal de caixa;
 
 * Pode ser guardado como PDF.
