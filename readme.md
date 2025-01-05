@@ -2,7 +2,7 @@
 
 ![Trecho do Totalizador de Mapa Resumo Mensal de Caixa](imagens/totalizador-de-mapa-resumo-mensal-de-caixa.png)
 
-O **Totalizador de Mapa Resumo Mensal de Caixa** é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do mapa resumo mensal de caixa, por meio do cálculo automático dos totais com base nos valores preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de mapa resumo mensal de caixa actualmente vigente no Serviço Nacional de Saúde em Moçambique.
+O **Totalizador de Mapa Resumo Mensal de Caixa** é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do mapa resumo mensal de caixa por meio do cálculo automático dos totais com base nos valores preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de mapa resumo mensal de caixa actualmente vigente no Serviço Nacional de Saúde em Moçambique.
 
 
 ## Objectivos
