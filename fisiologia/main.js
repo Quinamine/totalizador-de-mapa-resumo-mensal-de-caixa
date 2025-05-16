@@ -22,7 +22,7 @@ const totalizador = {
             let total = Number(valorDoQuartetoCelular) + Number(contraValor);
             total = total.toString();
             const celulasDeSaida = document.querySelectorAll(`.${inputTarget.dataset.totaleixoxoutput}`);
-            this.preecherTotalAoQuartetoCelularDeSaida(total, celulasDeSaida);
+            this.preencherTotalAoQuartetoCelularDeSaida(total, celulasDeSaida);
         } 
         if(inputTarget.parentElement.dataset.coltitle === "receitas-aviadas") {
             let classNameDosOperandos = inputTarget.dataset.totaleixoy;
@@ -46,7 +46,7 @@ const totalizador = {
             }
             total = total.toString();
             const celulasDeSaida = document.querySelectorAll(`.${inputTarget.dataset.totaleixoyoutput}`);
-            this.preecherTotalAoQuartetoCelularDeSaida(total, celulasDeSaida);
+            this.preencherTotalAoQuartetoCelularDeSaida(total, celulasDeSaida);
         }
         if(inputTarget.dataset.totalgeral) {
             const operandos = document.querySelectorAll(`.${inputTarget.dataset.totalgeral}`)
@@ -62,10 +62,10 @@ const totalizador = {
             }
             total = total.toString();
             const celulasDeSaida = document.querySelectorAll(`.${inputTarget.dataset.totalgeraloutput}`);
-            this.preecherTotalAoQuartetoCelularDeSaida(total, celulasDeSaida);
+            this.preencherTotalAoQuartetoCelularDeSaida(total, celulasDeSaida);
         }
     },
-    preecherTotalAoQuartetoCelularDeSaida(total, celulasDeSaida) {
+    preencherTotalAoQuartetoCelularDeSaida(total, celulasDeSaida) {
         for (const celula of celulasDeSaida) celula.value = "";
         let outputCellIndex = 3;
         for (let i=1; i <= total.length; i++) {

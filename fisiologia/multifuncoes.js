@@ -3,8 +3,8 @@ var keyPrefix = "trmcaixa";
 function desfoqueDoFundo(accao) {
     const desfoque = document.querySelector(".desfoque");
     accao === "desfocar" ? 
-    desfoque.classList.add("on") :
-    desfoque.classList.remove("on");
+    desfoque.classList.add("--on") :
+    desfoque.classList.remove("--on");
 }
 function alertarSobre(msg) {
     const dialogBoxDefault = document.querySelector(".dialog-box-default--small");
@@ -24,7 +24,7 @@ function alertarSobre(msg) {
     dialogBoxDefault.classList.add("--open");
 }
 function destacarCelulasComConteudoOmisso() {
-    const celulas = document.querySelectorAll(".ficha__col-de-inputs input");
+    const celulas = document.querySelectorAll(".ficha__col-de-inputs input,.input-celular--focus");
     let celulasSaturadas = 0;
     for(const c of celulas) {
         c.classList.remove("input--bg-color-danger");
@@ -50,7 +50,7 @@ function destacarCelulasComConteudoOmisso() {
     }  
 }
 function removerDestaqueDeRedCells() {
-    const celulas = document.querySelectorAll(".ficha__col-de-inputs input");
+    const celulas = document.querySelectorAll(".ficha__col-de-inputs input, .input-celular--focus");
     for (const c of celulas) c.classList.remove("input--bg-color-danger");
 }
 function actualizarAnoDeCopyright() {
@@ -109,7 +109,7 @@ window.addEventListener("load", () => {
         const readonlyInputsMsg = "Os totais estão inacessíveis para assegurar que não sejam modificados.";
         alertarSobre(readonlyInputsMsg);
     }));
-    const inputsCelulares = document.querySelectorAll(".ficha__col-de-inputs input");
+    const inputsCelulares = document.querySelectorAll(".ficha__col-de-inputs input, .input-celular--focus");
     inputsCelulares.forEach (inputCelular => inputCelular.addEventListener("input", destacarCelulasComConteudoOmisso));
     destacarCelulasComConteudoOmisso();
     actualizarAnoDeCopyright();

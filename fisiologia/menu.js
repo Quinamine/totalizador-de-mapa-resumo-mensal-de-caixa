@@ -36,8 +36,8 @@ const menu = {
                     if(nL[i].textContent === numLinha) {
                             numLinhaMatches = true;
                             let newIndex = i;
-                            if(window.innerWidth > 998) newIndex -= 2;
-                            i > 2 ? nL[newIndex].parentElement.scrollIntoView() : document.body.scrollIntoView(); 
+                            if(window.innerWidth > 998) newIndex -= 3;
+                            i > 3 ? nL[newIndex].parentElement.scrollIntoView() : document.body.scrollIntoView(); 
                             this.highlightLnFound(nL[i].parentElement);        
                     }
                 }  
