@@ -7,7 +7,7 @@ O **Totalizador de Mapa Resumo Mensal de Caixa** é um serviço online gratuito 
 
 ## Objectivos
 
-* Auxiliar os Profissionais de Saúde na totalização do mapa resumo mensal de caixa com exatidão e prontidão;
+* Auxiliar os profissionais de saúde na totalização do mapa resumo mensal de caixa com exatidão e prontidão;
 
 * Minimizar possíveis erros de totalização;
 
