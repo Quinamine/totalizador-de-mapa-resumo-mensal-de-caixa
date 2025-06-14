@@ -85,7 +85,35 @@ const totalizador = {
         return soma;
     }
 }
-
+const mapa = {
+    toRadioCheckboxes(checkboxes) {
+        checkboxes.forEach (checkbox => {
+            checkbox.addEventListener("change", () => {
+                for (const c of checkboxes) c.checked = false;
+                checkbox.checked = true;
+            });
+        });
+    },
+    saveCheckboxOption(checkboxes, key) {
+        for(const checkbox of checkboxes) {
+            checkbox.addEventListener("change", () => localStorage.setItem(`${key}`, checkbox.id));
+            let checkboxSavedOnStorage = localStorage.getItem(`${key}`);
+            if(checkboxSavedOnStorage) {
+                checkbox.checked = false;
+                if(checkbox.id === checkboxSavedOnStorage) {
+                    checkbox.checked = true;
+                }
+            }
+        }
+    },
+    simularDuplicadoOuTriplicado(checkbox) {
+        const ficha = document.querySelector(".ficha");
+        let copia = checkbox.dataset.copiadaficha;
+        ficha.classList.remove("ficha--duplicado");
+        ficha.classList.remove("ficha--triplicado");
+        ficha.classList.add(`${copia}`);
+    }
+}
 function escutarEventos() {
     const inputsCelulares = document.querySelectorAll("[data-totaleixoy]");
     inputsCelulares.forEach( inputCelular => {
@@ -97,10 +125,21 @@ function escutarEventos() {
             inputCelular.value !== "" && totalizador.filtrarEtotalizarCelulas(inputCelular);
         }, 0)
     });
+    // Simular Duplicado ou triplicado
+    const checkboxesBgcModifiers = document.querySelectorAll(".ficha__rodape input[type=checkbox]");
+    mapa.toRadioCheckboxes(checkboxesBgcModifiers);
+    let checkboxStorageKey = "tmrmc-copia"
+    mapa.saveCheckboxOption(checkboxesBgcModifiers, checkboxStorageKey);
+    checkboxesBgcModifiers.forEach( checkbox => {
+        checkbox.addEventListener("change", () => {
+            mapa.simularDuplicadoOuTriplicado(checkbox);
+        });
+        checkbox.checked && mapa.simularDuplicadoOuTriplicado(checkbox);
+    });
 }
 window.addEventListener("load", () => {
     backup();
-    escutarEventos();    
+    escutarEventos();
 });
 
 

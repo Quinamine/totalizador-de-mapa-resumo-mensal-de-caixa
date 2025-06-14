@@ -26,19 +26,16 @@ const menu = {
                 menu.irParaLinha().dialogBox.classList.remove("--open");
                 menu.irParaLinha().removeLnHighlight();
             },
-
             goToLn(numLinha) {
                 this.removeLnHighlight(); 
                 let nL = this.numerosDeLinha;
-
                 let numLinhaMatches = false;
                 for(let i = 0; i < nL.length; i++) {
                     if(nL[i].textContent === numLinha) {
-                            numLinhaMatches = true;
-                            let newIndex = i;
-                            if(window.innerWidth > 998) newIndex -= 3;
-                            i > 3 ? nL[newIndex].parentElement.scrollIntoView() : document.body.scrollIntoView(); 
-                            this.highlightLnFound(nL[i].parentElement);        
+                        numLinhaMatches = true;
+                        let newIndex = i - 5;
+                        i > 5 ? nL[newIndex].scrollIntoView() : document.body.scrollIntoView(); 
+                        this.highlightLnFound(nL[i].parentElement);        
                     }
                 }  
                 if(!numLinhaMatches) {
@@ -79,8 +76,7 @@ const menu = {
                 desfoqueDoFundo("focar");
             },
             confirmar() {
-                const inputsGerais  = document.querySelectorAll(".ficha input, textarea");
-       
+                const inputsGerais  = document.querySelectorAll(".ficha input");
                 for (let i = 0; i < inputsGerais.length; i++) {
                     inputsGerais[i].value = "";
                     localStorage.removeItem(`${keyPrefix}-input${i}`);
@@ -99,7 +95,7 @@ const menu = {
         const body = document.querySelector("body");
         artigo === "sobre" ? artigoSobre.classList.add("--open") 
         : artigoAjuda.classList.add("--open");
-        body.classList.add("body--overflow-h");
+        body.classList.add("--overflow-h");
         desfoqueDoFundo("desfocar");
     },
     fecharArtigo(artigo) {
@@ -114,7 +110,7 @@ const menu = {
             }
             artigoAjuda.classList.remove("--open");
         }
-        body.classList.remove("body--overflow-h");
+        body.classList.remove("--overflow-h");
         desfoqueDoFundo("focar");
     }
 }
@@ -170,10 +166,10 @@ function eventos() {
         if(itsMobile && articleIsOpen) {
             desfoqueDoFundo("focar");
             location.href = `index.html#${artigoSobre.id}`;
-            body.classList.remove("body--overflow-h");
+            body.classList.remove("--overflow-h");
         } else if(!itsMobile && articleIsOpen) {
             desfoqueDoFundo("desfocar");
-            body.classList.add("body--overflow-h");
+            body.classList.add("--overflow-h");
         }       
     });
     const btnAbrirAjuda = document.querySelector(".header__menu__btn--ajuda");
@@ -186,7 +182,7 @@ function eventos() {
         text: "Totaliza automaticamente, com base nos dados inseridos pelo usuário, o mapa resumo mensal de caixa. Foi desenvolvido de acordo com o modelo da respectiva ficha de resumo mensal actualmente vigente no Serviço Nacional de Saúde em Moçambique.",
         url: "https://quinamine.github.io/totalizador-de-mapa-resumo-mensal-de-caixa/index.html"
     }
-    const btnPartilhar = document.querySelector(".header__menu__btn--partilhar");
+    const btnPartilhar = document.querySelector(".main__btn-fixed--share");
     btnPartilhar.addEventListener("click", () => {
         try {
             navigator.share(data).then(()=>console.log("Totalizador partilhado com sucesso."))
