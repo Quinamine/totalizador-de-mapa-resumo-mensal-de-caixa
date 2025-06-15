@@ -45,6 +45,7 @@ function destacarCelulasComConteudoOmisso() {
             const motivoDeSaturacao = document.querySelector(".artigo__details--motivo-de-celulas-vermelhas");
             menu.abrirArtigo("ajuda");
             motivoDeSaturacao.setAttribute("open", "");
+            motivoDeSaturacao.classList.add("--borda-de-destaque");
             motivoDeSaturacao.scrollIntoView();
         }, 2500);
     }  
@@ -126,7 +127,7 @@ window.addEventListener("load", () => {
     const desfoque = document.querySelector(".desfoque");
     desfoque.addEventListener("mousedown", event => animarCaixaDeDialogo(event.type));
     desfoque.addEventListener("mouseup", event => animarCaixaDeDialogo(event.type));
-    // Fechar Topo Propaganda 
+    // Fecha Topo Info
     const btnXDetopoInfo = document.querySelectorAll(".topo-info__btn");
     btnXDetopoInfo.forEach(btn => {
         btn.addEventListener("click", () => fechartopoInfo(btn.parentElement.parentElement));
