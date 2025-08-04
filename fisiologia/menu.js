@@ -89,7 +89,8 @@ const menu = {
     imprimirFicha() {
         const urlOutput = document.querySelector(".ficha__url-pub");
         const url = location.href;
-        urlOutput.innerHTML = `Totalizado por computador. Totalizador disponível em: <span class="ficha__url-pub__link">${url}</span>`;
+        const title = document.title;
+        urlOutput.innerHTML = `Totalizado por computador. ${title} disponível em: <span class="ficha__url-pub__link">${url}</span>`;
         window.print()
     },
     abrirArtigo(artigo) {
