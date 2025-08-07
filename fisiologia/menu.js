@@ -87,10 +87,18 @@ const menu = {
         }
     },
     imprimirFicha() {
+        let inputsCelulares = document.querySelectorAll("[data-totaleixoy]");
+        let icPreenchidas = 0;
+        let totalizadoPor;
+        for(const ic of inputsCelulares) {
+            ic.value.length > 0 && icPreenchidas++;
+        }
+        if(icPreenchidas > 0) {totalizadoPor = "Totalizado por computador. "} 
+        else {totalizadoPor = "";}
         const urlOutput = document.querySelector(".ficha__url-pub");
         const url = location.href;
         const title = document.title;
-        urlOutput.innerHTML = `Totalizado por computador. ${title} disponível em: <span class="ficha__url-pub__link">${url}</span>`;
+        urlOutput.innerHTML = `${totalizadoPor}${title} disponível em: <span class="ficha__url-pub__link">${url}</span>`;
         window.print()
     },
     abrirArtigo(artigo) {
