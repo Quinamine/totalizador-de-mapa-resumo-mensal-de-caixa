@@ -133,22 +133,21 @@ window.addEventListener("load", () => {
         btn.addEventListener("click", () => fechartopoInfo(btn.parentElement.parentElement));
     });
     // Tooltips
-    const tooltipVazioIgualZero = document.querySelector(".tooltip--vazioigualzero");
     const tooltipMenuAjuda = document.querySelector(".tooltip--menu-ajuda");
     const menuOptionsContainer = document.querySelector(".header__menu__ul");
     setTimeout(() => {
-            Tooltip.mostrar(tooltipMenuAjuda);
-            document.body.scrollIntoView();
-            if(window.innerWidth < 510) {
-                const btnMenuAjuda = document.querySelector(".header__menu__btn--ajuda").parentElement;
-                let cssValueForPropertyRight = btnMenuAjuda.clientWidth / 2 - 14;
-                tooltipMenuAjuda.style.cssText = `right: calc(0px + ${cssValueForPropertyRight}px);`;
-                menuOptionsContainer.scrollBy({left: 509, behavior: 'smooth'});
-                menuOptionsContainer.classList.add("--overflow-h");
-            }
-        }, 3000);
-        setTimeout(() => {
-            Tooltip.omitir(tooltipMenuAjuda);
-            menuOptionsContainer.classList.remove("--overflow-h");
-        }, 10000);
+        Tooltip.mostrar(tooltipMenuAjuda);
+        document.body.scrollIntoView();
+        if(window.innerWidth < 510) {
+            const btnMenuAjuda = document.querySelector(".header__menu__btn--ajuda").parentElement;
+            let cssValueForPropertyRight = btnMenuAjuda.clientWidth / 2 - 14;
+            tooltipMenuAjuda.style.cssText = `right: calc(0px + ${cssValueForPropertyRight}px);`;
+            menuOptionsContainer.scrollBy({left: 509, behavior: 'smooth'});
+            menuOptionsContainer.classList.add("--overflow-h");
+        }
+    }, 3000);
+    setTimeout(() => {
+        Tooltip.omitir(tooltipMenuAjuda);
+        menuOptionsContainer.classList.remove("--overflow-h");
+    }, 10000);
 });
